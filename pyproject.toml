@@ -15,3 +15,4 @@ known-first-party = ["ingestion", "warehouse", "quality", "app"]
 
 [tool.ruff.lint.per-file-ignores]
 "orchestration/dags/flowscope_daily.py" = ["E402"]
+"app/dashboard.py" = ["E402"]

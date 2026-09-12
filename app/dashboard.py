@@ -2,6 +2,12 @@
 
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
+# Community Cloud runs app/dashboard.py with app/ on sys.path, not the repo root.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
