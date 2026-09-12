@@ -1,0 +1,8 @@
+flowscope:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('FLOWSCOPE_DB_PATH', '../data/flowscope.duckdb') }}"
+      threads: 4
+      schema: main

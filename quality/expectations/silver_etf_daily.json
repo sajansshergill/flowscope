@@ -1,0 +1,37 @@
+{
+  "suite_name": "silver_etf_daily",
+  "description": "Gates every Silver load before Gold / dashboard refresh.",
+  "expectations": [
+    {
+      "type": "shares_outstanding_continuity",
+      "kwargs": {
+        "column": "shares_outstanding",
+        "partition": ["ticker"]
+      },
+      "notes": "No null shares outstanding; no missing rows vs NYSE calendar."
+    },
+    {
+      "type": "non_negative_nav",
+      "kwargs": {
+        "column": "nav",
+        "min_value": 0
+      }
+    },
+    {
+      "type": "no_missing_trading_days",
+      "kwargs": {
+        "date_column": "as_of_date",
+        "partition": ["ticker"],
+        "calendar": "XNYS"
+      }
+    },
+    {
+      "type": "flow_magnitude_bounds",
+      "kwargs": {
+        "column": "net_flow",
+        "zscore_abs_max": 8
+      },
+      "notes": "Outlier creations/redemptions fail the Airflow task, not the dashboard."
+    }
+  ]
+}

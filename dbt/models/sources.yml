@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    tables:
+      - name: issuer_daily
+      - name: prices
+      - name: macro
+      - name: etf_universe

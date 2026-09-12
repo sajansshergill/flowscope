@@ -1,0 +1,120 @@
+# ~20 ETFs tagged by sector and theme. Issuers publish shares outstanding + NAV daily.
+etfs:
+  - ticker: SPY
+    name: SPDR S&P 500 ETF Trust
+    issuer: spdr
+    sector: broad
+    theme: core
+  - ticker: QQQ
+    name: Invesco QQQ Trust
+    issuer: invesco
+    sector: broad
+    theme: core
+  - ticker: IWM
+    name: iShares Russell 2000 ETF
+    issuer: ishares
+    sector: broad
+    theme: core
+    product_id: "239726"
+  - ticker: XLK
+    name: Technology Select Sector SPDR Fund
+    issuer: spdr
+    sector: technology
+    theme: core
+  - ticker: XLF
+    name: Financial Select Sector SPDR Fund
+    issuer: spdr
+    sector: financials
+    theme: core
+  - ticker: XLE
+    name: Energy Select Sector SPDR Fund
+    issuer: spdr
+    sector: energy
+    theme: core
+  - ticker: XLV
+    name: Health Care Select Sector SPDR Fund
+    issuer: spdr
+    sector: health_care
+    theme: core
+  - ticker: XLI
+    name: Industrial Select Sector SPDR Fund
+    issuer: spdr
+    sector: industrials
+    theme: core
+  - ticker: XLY
+    name: Consumer Discretionary Select Sector SPDR Fund
+    issuer: spdr
+    sector: consumer_discretionary
+    theme: core
+  - ticker: XLP
+    name: Consumer Staples Select Sector SPDR Fund
+    issuer: spdr
+    sector: consumer_staples
+    theme: core
+  - ticker: XLU
+    name: Utilities Select Sector SPDR Fund
+    issuer: spdr
+    sector: utilities
+    theme: core
+  - ticker: XLB
+    name: Materials Select Sector SPDR Fund
+    issuer: spdr
+    sector: materials
+    theme: core
+  - ticker: XLRE
+    name: Real Estate Select Sector SPDR Fund
+    issuer: spdr
+    sector: real_estate
+    theme: core
+  - ticker: XLC
+    name: Communication Services Select Sector SPDR Fund
+    issuer: spdr
+    sector: communication
+    theme: core
+  - ticker: SMH
+    name: VanEck Semiconductor ETF
+    issuer: vaneck
+    sector: technology
+    theme: ai
+  - ticker: BOTZ
+    name: Global X Robotics & Artificial Intelligence ETF
+    issuer: globalx
+    sector: technology
+    theme: ai
+  - ticker: ITA
+    name: iShares U.S. Aerospace & Defense ETF
+    issuer: ishares
+    sector: industrials
+    theme: defense
+    product_id: "239670"
+  - ticker: IBIT
+    name: iShares Bitcoin Trust
+    issuer: ishares
+    sector: crypto
+    theme: crypto
+    product_id: "333011"
+  - ticker: ICLN
+    name: iShares Global Clean Energy ETF
+    issuer: ishares
+    sector: energy
+    theme: clean_energy
+    product_id: "239738"
+  - ticker: TAN
+    name: Invesco Solar ETF
+    issuer: invesco
+    sector: energy
+    theme: clean_energy
+
+macro_series:
+  - series_id: DGS10
+    name: 10-Year Treasury Yield
+    role: rates
+  - series_id: DGS2
+    name: 2-Year Treasury Yield
+    role: rates
+  - series_id: VIXCLS
+    name: CBOE Volatility Index
+    role: vix
+  - series_id: FEDFUNDS
+    name: Effective Federal Funds Rate
+    role: rates

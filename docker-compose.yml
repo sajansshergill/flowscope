@@ -1,0 +1,31 @@
+services:
+  dashboard:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      FLOWSCOPE_DB_PATH: /app/data/flowscope.duckdb
+      FRED_API_KEY: ${FRED_API_KEY:-}
+      ALPHA_VANTAGE_API_KEY: ${ALPHA_VANTAGE_API_KEY:-}
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    command: >
+      streamlit run app/dashboard.py
+      --server.port=8501
+      --server.address=0.0.0.0
+
+  ingest:
+    build: .
+    profiles: ["ingest"]
+    environment:
+      FLOWSCOPE_DB_PATH: /app/data/flowscope.duckdb
+      FRED_API_KEY: ${FRED_API_KEY:-}
+      ALPHA_VANTAGE_API_KEY: ${ALPHA_VANTAGE_API_KEY:-}
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    command: >
+      sh -c "python -m ingestion.fetch_issuer_files
+      && python -m ingestion.fetch_prices
+      && python -m ingestion.fetch_macro"
